@@ -3,6 +3,7 @@ Australian Federal Parliament MP expenses processing utilities and sample data.
 
 Contents:
  * run.pl : perl script to run downloads of all pdfs and run pdftotext to extract text
+ * mp-expenses_P36_pdftotext.tar.gz : extracted text files for P36 (1st half 2015)
  * mp-expenses_P37_pdftotext.tar.gz : extracted text files for P37 (2nd half 2015)
  * mp-expenses_P38_pdftotext.tar.gz : extracted text files for P38 (1st half 2016)
 
