@@ -12,6 +12,7 @@ The text files are NOT parsed or reduced to clean transaction data.
 
 To get pdfs and/or other periods of data, use the run.pl perl script as follows.
 
+-------------------------------------------------------------------------------------
 Script Usage: ./run.pl period-directory-name [limit]
 
    Perl script which downloads pdfs and pdftotext text extraction
@@ -36,6 +37,7 @@ Dependancies:
 * wget is required
 
 Latest version: https://github.com/twensor/mp-expenses
+--------------------------------------------------------------------------------------
 
 Enjoy. Hope this helps someone be an active citizen.
 
