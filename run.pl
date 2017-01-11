@@ -17,16 +17,17 @@ $0 period-directory-name [limit]
    To download all pdfs and convert to raw text for the P38 period,
    you would run something like:
 
-      eg. ./run.sh P38_2016a 5
+   Example: ./run.sh P38_2016a 5
 
           Will download and run pdftotext for the first 5 files for period P38.
           Omit the 5 for the whole shebang.
 
-   You must start the directory name with the period "P" number.
-   This specifies the 6 monthly period you require.
-   The directory will be created as needed, and downloads made from
-   http://www.finance.gov.au/publications/parliamentarians-reporting/parliamentarians-expenditure-Pnn/
-
+   You must start the directory name with the correct period "P" number and create it yourself first.
+   This period number, "P38" in the example above, specifies the 6 monthly period you require.
+   All PDFs (up to the limit number optionally specified) will be downloaded from:
+       http://www.finance.gov.au/publications/parliamentarians-reporting/parliamentarians-expenditure-Pnn/
+   and pdftotext will be run. 
+   
    Dependancies:
     * You will need to install poppler-utils which provides pdftotext
     * wget is required
