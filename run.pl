@@ -42,7 +42,12 @@ if ( $period_num eq "" ) {
     exit 1
 }
 
+my $period_number = $period_num; $period_number =~ s/^P//;
 my $INDEX_URL = "http://www.finance.gov.au/publications/parliamentarians-reporting/parliamentarians-expenditure-$period_num/";
+# from 2013 and earlier the name is .html with underscores not hyphens
+if ( $period_number <= 2013 ) {
+     $INDEX_URL = "http://www.finance.gov.au/publications/parliamentarians-reporting/parliamentarians_expenditure_${period_num}.html";
+}
 my $INDEX_FILE = "$period/index.html";
 my $URLS_FILE = "$period/index-urls.txt";
 my $PDIR = "$period/pdfs";
@@ -89,6 +94,10 @@ open (F,$URLS_FILE) || die "$0 failed to open URLS_FILE[$URLS_FILE] [$!]\n";
 while (<F>) {
     chop;
     my $url = $_;
+    # if url starts with /sites/, prepend http://www.finance.gov.au
+    if ( $url =~ m~^/sites~ ) {
+        $url = "http://www.finance.gov.au" . $url;
+    }
     my $name = $url;
     $name =~ s/'//g;
     $name =~ s/.+${period_num}_(.+)\.pdf/\1/;
